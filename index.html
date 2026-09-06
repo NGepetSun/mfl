@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>MAPENDOS - Live Bracket & Roster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --idp-red: #c81e2c;
@@ -1072,23 +1075,43 @@ body::after{
 </head>
 <body class="public-mode">
 
-<div class="mode-bar">
-  <span class="mode-badge public" id="modeBadge">MODE PUBLIK</span>
-  <button class="mode-toggle-btn" id="modeToggleBtn" onclick="toggleMode()">🔑 Masuk Admin</button>
-</div>
-
 <nav id="siteNav" aria-label="Main navigation">
-  <div class="site-brand">MAPENDOS • FAMZ III</div>
-  <button data-site="home" onclick="MAPENDOS_PAGE('home')">HOME</button>
-  <button data-site="bracket" onclick="MAPENDOS_PAGE('bracket')">BRACKET</button>
-  <button data-site="teams" onclick="MAPENDOS_PAGE('teams')">TEAMS</button>
-  <button data-site="live" onclick="MAPENDOS_PAGE('live')">LIVE</button>
-  <button data-site="rules" onclick="MAPENDOS_PAGE('rules')">RULES</button>
-  <button data-site="prize" onclick="MAPENDOS_PAGE('prize')">PRIZE</button>
+  <div class="site-brand">MAPENDOS <small>WE ARE FAMZ</small></div>
+  <div class="nav-links">
+    <button data-site="home" onclick="MAPENDOS_PAGE('home')">HOME</button>
+    <button data-site="bracket" onclick="MAPENDOS_PAGE('bracket')">BRACKET</button>
+    <button data-site="teams" onclick="MAPENDOS_PAGE('teams')">TEAMS</button>
+    <button data-site="rules" onclick="MAPENDOS_PAGE('rules')">RULES</button>
+    <button data-site="prize" onclick="MAPENDOS_PAGE('prize')">PRIZE</button>
+    <button data-site="live" onclick="MAPENDOS_PAGE('live')">LIVE</button>
+  </div>
+  <div class="nav-right">
+    <span class="live-pulse-badge"><i></i> LIVE</span>
+    <span class="mode-badge public" id="modeBadge">MODE PUBLIK</span>
+    <button class="mode-toggle-btn" id="modeToggleBtn" onclick="toggleMode()">🔑 Masuk Admin</button>
+  </div>
 </nav>
 
 <div id="siteHome" class="site-page site-home">
-  <div class="home-hero"><div class="kicker">MAPENDOS PRESENT • #MPDFUNFUN</div><h1>MAPENDOS</h1><h2>WE ARE FAMZ III</h2><div class="vs">MAPENDOS IDP <b>VS</b> MAPENDOS IME</div></div>
+  <div class="home-hero">
+    <div class="hero-side hero-side-left">
+      <div class="hero-flavor">MORE THAN<br>JUST A GAME</div>
+      <div class="hero-faction-logo" style="background-image:url('logo-idp.webp')"></div>
+      <div class="hero-faction-name idp">MAPENDOS IDP</div>
+    </div>
+    <div class="hero-center">
+      <div class="kicker">MAPENDOS PRESENT • #MPDFUNFUN</div>
+      <h1>MAPENDOS</h1>
+      <h2>WE ARE FAMZ III</h2>
+      <div class="vs">MAPENDOS IDP <b>VS</b> MAPENDOS IME</div>
+      <div class="hero-prize-badge">TOTAL GRANDPRIZE<br><strong>Rp 15.000.000</strong></div>
+    </div>
+    <div class="hero-side hero-side-right">
+      <div class="hero-flavor">SAME BLOOD<br>DIFFERENT STORY</div>
+      <div class="hero-faction-logo" style="background-image:url('logo-ime.webp')"></div>
+      <div class="hero-faction-name ime">MAPENDOS IME</div>
+    </div>
+  </div>
   <div class="home-cards">
     <div class="home-card" onclick="MAPENDOS_PAGE('bracket')"><small>TOURNAMENT</small><h3>LIVE BRACKET</h3><p>Bracket dinamis dengan draw IDP vs IME dan progression pemenang.</p><span>BUKA BRACKET →</span></div>
     <div class="home-card" onclick="MAPENDOS_PAGE('live')"><small>BROADCAST</small><h3>LIVE STREAM</h3><p>Halaman khusus untuk tampilan live POV pertandingan.</p><span>BUKA LIVE →</span></div>
@@ -2262,12 +2285,188 @@ body::after{
 .dynamic-manager-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.dynamic-manager-head h2{margin:0;color:#f2ca6b;font-size:18px;letter-spacing:.12em}.dynamic-manager-head p{margin:0;color:#87909d;font-size:9px;letter-spacing:.08em}.team-count-box{margin-left:auto;display:flex;align-items:center;gap:7px}.team-count-box label{font-size:8px;font-weight:900;letter-spacing:.12em;color:#aeb5bf}.team-count-box input{width:70px!important;padding:8px!important;text-align:center;border:1px solid #39414c!important;border-radius:7px!important;background:#0e1319!important;color:#fff!important;font-weight:900}.dynamic-build-btn{border:1px solid #d2ad55;background:#17150e;color:#f3d77e;border-radius:7px;padding:9px 12px;font-size:8px;font-weight:900;letter-spacing:.1em;cursor:pointer}.dynamic-build-btn:hover{background:#25200f}
 #dynamicTeamGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}.dynamic-faction-heading{grid-column:1/-1;display:flex;align-items:center;gap:10px;margin-top:8px;padding:10px 12px;border:1px solid #2b333d;border-radius:9px;background:linear-gradient(90deg,rgba(229,42,66,.10),rgba(10,13,17,.92));}.dynamic-faction-heading.ime{background:linear-gradient(90deg,rgba(152,85,240,.10),rgba(10,13,17,.92));}.faction-heading-logo{width:34px;height:34px;border-radius:7px;background:center/contain no-repeat;flex:0 0 34px}.dynamic-faction-heading b{display:block;font-size:10px;letter-spacing:.12em;color:#f0d178}.dynamic-faction-heading small{display:block;margin-top:2px;color:#737d89;font-size:7px;letter-spacing:.08em}.dynamic-team-card{position:relative;border:1px solid #28303a;border-radius:10px;background:linear-gradient(145deg,#11161b,#080b0e);padding:12px;overflow:hidden}.dynamic-team-card.idp{border-color:rgba(229,42,66,.55)}.dynamic-team-card.ime{border-color:rgba(152,85,240,.55)}.dynamic-team-card .team-card-top{display:flex;gap:10px;align-items:center}.dynamic-logo{width:46px;height:46px;flex:0 0 46px;border-radius:10px;background:#161b21 center/cover no-repeat;border:1px solid #3c444e}.dynamic-team-card.idp .dynamic-logo{border-color:#e52a42;box-shadow:0 0 18px rgba(229,42,66,.22)}.dynamic-team-card.ime .dynamic-logo{border-color:#9855f0;box-shadow:0 0 18px rgba(152,85,240,.22)}.dynamic-team-name{flex:1}.dynamic-team-name label{display:block;color:#737d89;font-size:7px;font-weight:900;letter-spacing:.12em;margin-bottom:4px}.dynamic-team-name input{width:100%!important;background:#0b0f13!important;border:1px solid #29313b!important;border-radius:6px!important;padding:8px!important;color:#fff!important;font-size:12px!important;font-weight:800!important;outline:none}.faction-buttons{display:flex;gap:5px;margin-top:7px}.faction-buttons button{display:flex;align-items:center;gap:5px;border:1px solid #343c47;background:#0c1014;color:#9ba3ad;border-radius:6px;padding:5px 7px;font-size:7px;font-weight:900;cursor:pointer}.faction-buttons button img{width:16px;height:16px;object-fit:cover;border-radius:4px}.faction-buttons button.active.idp{border-color:#e52a42;color:#ff7584;background:rgba(229,42,66,.10)}.faction-buttons button.active.ime{border-color:#9855f0;color:#c7a4ff;background:rgba(152,85,240,.10)}.dynamic-roster{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}.dynamic-roster-row{display:flex;align-items:center;gap:6px}.dynamic-roster-row span{width:16px;color:#69727e;font-size:8px;font-weight:900}.dynamic-roster-row input{width:100%!important;background:#0a0e12!important;border:1px solid #222a33!important;border-radius:5px!important;padding:7px!important;color:#e9ebef!important;font-size:9px!important}.dynamic-roster-row input.rolled-in{border-color:#f2ca6b!important;box-shadow:0 0 10px rgba(242,202,107,.14)}
 .dynamic-bracket-shell{width:min(1500px,calc(100% - 18px));margin:0 auto 20px;padding:15px;border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(6,9,12,.88);box-shadow:0 28px 80px rgba(0,0,0,.55);overflow-x:auto}.dynamic-bracket-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.dynamic-bracket-head h2{margin:0;color:#f2ca6b;font-size:18px;letter-spacing:.13em}.dynamic-bracket-head span{color:#7f8995;font-size:8px;letter-spacing:.12em}.dynamic-bracket{display:flex;align-items:stretch;gap:28px;min-width:max-content;padding:10px 8px 24px}.dynamic-round{display:flex;flex-direction:column;min-width:235px}.dynamic-round-title{text-align:center;color:#aeb5be;font-size:8px;font-weight:900;letter-spacing:.17em;border-bottom:1px solid #29313a;padding:0 0 8px;margin-bottom:10px}.dynamic-round-body{display:flex;flex-direction:column;justify-content:space-around;gap:10px;flex:1}.dynamic-match{position:relative;border:1px solid #2c3540;border-radius:9px;background:#0d1116;box-shadow:0 9px 20px rgba(0,0,0,.25);overflow:visible}.dynamic-match.ready{border-color:#9a7a38}.dynamic-match.bye{opacity:.72}.dynamic-team-slot{display:flex;align-items:center;gap:7px;min-height:39px;padding:7px 9px;border-bottom:1px solid #202731;cursor:pointer}.dynamic-team-slot:last-child{border-bottom:0}.dynamic-team-slot:hover{background:rgba(255,255,255,.035)}.dynamic-team-slot.winner{background:rgba(242,202,107,.09);box-shadow:inset 3px 0 #f2ca6b}.dynamic-team-slot.loser{opacity:.42}.dynamic-team-slot .mini-logo{width:24px;height:24px;border-radius:6px;flex:0 0 24px;background:#161b21 center/cover no-repeat;border:1px solid #343c47}.dynamic-team-slot.idp .mini-logo{border-color:#e52a42}.dynamic-team-slot.ime .mini-logo{border-color:#9855f0}.dynamic-team-slot strong{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dynamic-team-slot small{margin-left:auto;color:#67717e;font-size:6px;font-weight:900;letter-spacing:.08em}.dynamic-match::after{content:"";position:absolute;right:-29px;top:50%;width:28px;height:1px;background:#414a55}.dynamic-round:last-child .dynamic-match::after{display:none}.dynamic-round:not(:first-child) .dynamic-match::before{content:"";position:absolute;left:-29px;top:25%;bottom:25%;width:28px;border-top:1px solid #414a55;border-bottom:1px solid #414a55}.dynamic-round:first-child .dynamic-match::before{display:none}.dynamic-empty{padding:50px 20px;text-align:center;color:#707986;font-size:10px}.dynamic-pair-idp{border-left:3px solid #e52a42}.dynamic-pair-ime{border-left:3px solid #9855f0}.dynamic-faction-badge{display:inline-flex;align-items:center;gap:5px;font-size:7px;font-weight:900;letter-spacing:.1em}.dynamic-faction-badge i{width:7px;height:7px;border-radius:50%}.dynamic-faction-badge.idp i{background:#e52a42}.dynamic-faction-badge.ime i{background:#9855f0}
-/* GTA V ROLEPLAY atmosphere: city/night/traffic look, no PUBG styling */
-.home-hero,.header{background:linear-gradient(90deg,rgba(5,8,10,.78),rgba(18,20,20,.70),rgba(5,8,10,.78))!important;backdrop-filter:blur(7px)}
-.home-hero{position:relative;overflow:hidden}.home-hero:after{content:"LOS SANTOS • NIGHT SHIFT • ROLEPLAY";position:absolute;left:20px;bottom:12px;color:rgba(255,255,255,.16);font-size:7px;letter-spacing:.22em}
+/* GTA V ROLEPLAY atmosphere (kept for .header only; .home-hero now uses cinematic redesign background) */
+.header{background:linear-gradient(90deg,rgba(5,8,10,.78),rgba(18,20,20,.70),rgba(5,8,10,.78))!important;backdrop-filter:blur(7px)}
 @media(max-width:800px){#dynamicTeamGrid{grid-template-columns:1fr}.dynamic-roster{grid-template-columns:1fr}.team-count-box{margin-left:0}.dynamic-bracket{gap:18px}.dynamic-round{min-width:210px}}
 /* Loader */
 #mapendosLoader{position:fixed;inset:0;z-index:99999;background:#050709;display:flex;align-items:center;justify-content:center;opacity:1;transition:opacity .7s ease,visibility .7s ease}.map-loader-inner{text-align:center;position:relative}.map-loader-logos{display:flex;align-items:center;gap:28px;justify-content:center}.map-loader-logo{width:88px;height:88px;background:center/contain no-repeat;filter:drop-shadow(0 0 18px rgba(255,255,255,.18));opacity:0;transform:translateX(0) scale(.82)}.map-loader-logo.left{animation:loaderLeft 1.15s cubic-bezier(.2,.75,.25,1) .15s forwards}.map-loader-logo.right{animation:loaderRight 1.15s cubic-bezier(.2,.75,.25,1) .15s forwards}.map-loader-vs{font:900 34px Georgia,serif;color:#f2ca6b;letter-spacing:.12em;opacity:0;transform:scale(.65);animation:loaderVS .65s ease 1.15s forwards;text-shadow:0 0 18px rgba(242,202,107,.5)}.map-loader-title{margin-top:18px;color:#dfe3e8;font-size:8px;font-weight:900;letter-spacing:.35em;opacity:0;animation:loaderTitle .6s ease 1.35s forwards}.map-loader-bar{width:250px;height:2px;background:#20262d;margin:13px auto 0;overflow:hidden}.map-loader-bar:after{content:"";display:block;height:100%;width:42%;background:linear-gradient(90deg,#e52a42,#f2ca6b,#9855f0);animation:loaderBar 1.7s ease-in-out infinite}.loader-sub{margin-top:8px;color:#69727e;font-size:7px;letter-spacing:.15em;opacity:0;animation:loaderTitle .5s ease 1.5s forwards}@keyframes loaderLeft{from{opacity:0;transform:translateX(-170px) scale(.72)}to{opacity:1;transform:translateX(0) scale(1)}}@keyframes loaderRight{from{opacity:0;transform:translateX(170px) scale(.72)}to{opacity:1;transform:translateX(0) scale(1)}}@keyframes loaderVS{to{opacity:1;transform:scale(1)}}@keyframes loaderTitle{to{opacity:1}}@keyframes loaderBar{0%{transform:translateX(-120%)}100%{transform:translateX(250%)}}
+
+/* ===================== VISUAL ENHANCEMENT PACK (v2 - performance-safe) ===================== */
+body{
+  font-family:'Rajdhani','Segoe UI',Arial,sans-serif;
+}
+/* Ambient background: transform-only animation (GPU-composited, no repaint on scroll) */
+body::before{
+  content:"";
+  position:fixed;
+  top:-15%; left:-15%; right:-15%; bottom:-15%;
+  width:130%; height:130%;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(200,30,44,.14), transparent 42%),
+    radial-gradient(circle at 82% 78%, rgba(123,47,214,.14), transparent 42%),
+    radial-gradient(ellipse at center, #14161f 0%, #0a0b10 70%);
+  will-change:transform;
+  animation:ambientDrift 40s ease-in-out infinite alternate;
+}
+@keyframes ambientDrift{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(-3%,-3%,0)}
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  opacity:.045;
+  background-image:
+    linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px);
+  background-size:44px 44px;
+}
+.title,.section-title,.dynamic-bracket-head h2,.dynamic-manager-head h2{
+  font-family:'Orbitron','Segoe UI',Arial,sans-serif;
+}
+.presents,.juara-card .j-label,.winner-modal-kicker{color:#b7bcc8!important}
+.tag,.slot input::placeholder,.roster-teamname.placeholder,.winner-modal-card p{color:#8a8f9c!important}
+.slot{transition:transform .15s ease, border-color .25s ease; position:relative}
+.slot:hover{transform:translateY(-2px) scale(1.015)}
+/* Glow rings use a static box-shadow on a pseudo-element; only opacity animates (compositor-only, cheap even with many slots at once) */
+.slot.idp::before,.slot.ime::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.5;
+  animation:pulseOpacity 3.4s ease-in-out infinite;
+}
+.slot.idp::before{box-shadow:0 0 16px rgba(200,30,44,.7)}
+.slot.ime::before{box-shadow:0 0 16px rgba(123,47,214,.7)}
+@keyframes pulseOpacity{0%,100%{opacity:.35}50%{opacity:.85}}
+.slot.winner-ready::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:-1;
+  box-shadow:0 0 0 1px rgba(240,201,104,.5), 0 0 32px rgba(240,201,104,.3);
+  opacity:.6;
+  animation:pulseOpacity 1.8s ease-in-out infinite;
+}
+.dynamic-team-card{transition:transform .15s ease}
+.dynamic-team-card:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion: reduce){
+  body::before,.slot.idp::before,.slot.ime::before,.slot.winner-ready::before{animation:none!important}
+}
+/* On smaller/low-power screens, skip decorative glow animation entirely to keep scrolling smooth */
+@media (max-width:600px){
+  .slot.idp::before,.slot.ime::before,.slot.winner-ready::before{animation:none!important;opacity:.55}
+}
+
+/* ===================== NAVBAR + HERO REDESIGN ===================== */
+#siteNav{
+  display:flex;align-items:center;gap:14px;
+  padding:10px 18px;
+}
+#siteNav .site-brand{
+  display:flex;flex-direction:column;line-height:1.05;
+  font-family:'Orbitron','Segoe UI',Arial,sans-serif;
+  font-weight:900;font-size:16px;letter-spacing:.08em;
+  background:linear-gradient(90deg,var(--idp-red),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-right:8px;
+}
+#siteNav .site-brand small{
+  font-family:'Rajdhani',Arial,sans-serif;
+  font-size:8px;letter-spacing:.3em;color:#9aa1ad;
+  -webkit-text-fill-color:#9aa1ad;
+}
+#siteNav .nav-links{display:flex;gap:6px;margin-right:auto}
+#siteNav .nav-right{display:flex;align-items:center;gap:10px}
+.live-pulse-badge{
+  display:flex;align-items:center;gap:6px;
+  font-size:9px;font-weight:900;letter-spacing:.12em;color:#ff5b64;
+  border:1px solid rgba(255,91,100,.4);border-radius:20px;padding:5px 10px;
+  background:rgba(255,91,100,.08);
+}
+.live-pulse-badge i{
+  width:7px;height:7px;border-radius:50%;background:#ff2d38;
+  box-shadow:0 0 6px rgba(255,45,56,.9);
+  animation:pulseOpacity 1.4s ease-in-out infinite;
+}
+@media(max-width:900px){
+  #siteNav{flex-wrap:wrap}
+  #siteNav .nav-links{order:3;width:100%;overflow-x:auto;margin-right:0}
+  #siteNav .site-brand{margin-right:auto}
+}
+
+.home-hero{
+  display:flex;align-items:center;justify-content:center;gap:40px;
+  padding:56px 24px;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 12% 50%, rgba(229,42,66,.28), transparent 45%),
+    radial-gradient(ellipse at 88% 50%, rgba(152,85,240,.28), transparent 45%),
+    radial-gradient(ellipse at 50% 120%, rgba(242,202,107,.10), transparent 60%),
+    linear-gradient(120deg,#05060a 0%,#0d0f16 45%,#05060a 100%);
+  box-shadow:0 25px 70px #000a, inset 0 0 120px rgba(0,0,0,.6);
+}
+.home-hero::before{
+  /* ember particles: cheap, opacity-only animation */
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, rgba(255,180,90,.8), transparent 60%),
+    radial-gradient(2px 2px at 25% 70%, rgba(255,120,90,.7), transparent 60%),
+    radial-gradient(1.5px 1.5px at 60% 15%, rgba(200,150,255,.7), transparent 60%),
+    radial-gradient(2px 2px at 80% 60%, rgba(255,180,90,.7), transparent 60%),
+    radial-gradient(1.5px 1.5px at 45% 85%, rgba(200,150,255,.6), transparent 60%);
+  opacity:.6;
+  animation:pulseOpacity 4s ease-in-out infinite;
+}
+.hero-side{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  flex:0 0 auto;
+}
+.hero-flavor{
+  font-size:9px;font-weight:800;letter-spacing:.2em;color:#8d96a4;text-align:center;line-height:1.6;
+}
+.hero-faction-logo{
+  width:120px;height:120px;border-radius:50%;
+  background-size:cover;background-position:center;
+  border:2px solid rgba(255,255,255,.15);
+  box-shadow:0 0 30px rgba(0,0,0,.5);
+}
+.hero-side-left .hero-faction-logo{box-shadow:0 0 34px rgba(200,30,44,.45)}
+.hero-side-right .hero-faction-logo{box-shadow:0 0 34px rgba(123,47,214,.45)}
+.hero-faction-name{
+  font-family:'Orbitron',Arial,sans-serif;
+  font-size:12px;font-weight:900;letter-spacing:.1em;
+  padding:5px 14px;border-radius:20px;
+}
+.hero-faction-name.idp{background:rgba(200,30,44,.15);color:#ff8f97;border:1px solid var(--idp-red)}
+.hero-faction-name.ime{background:rgba(123,47,214,.15);color:#d6b3ff;border:1px solid var(--ime-purple)}
+.hero-center{position:relative;z-index:1;text-align:center;max-width:480px}
+.hero-prize-badge{
+  margin-top:18px;display:inline-block;
+  border:1px solid var(--gold);border-radius:10px;
+  padding:8px 18px;font-size:9px;letter-spacing:.15em;color:#e8c574;
+  background:rgba(232,197,116,.08);
+}
+.hero-prize-badge strong{display:block;font-size:16px;margin-top:3px;color:#f3d77e;font-family:'Orbitron',Arial,sans-serif}
+@media(max-width:900px){
+  .home-hero{flex-direction:column;gap:20px;padding:36px 16px}
+  .hero-side{flex-direction:row;gap:14px}
+  .hero-faction-logo{width:70px;height:70px}
+  .hero-flavor{display:none}
+}
+/* ===================================================================== */
+/* ===================================================================== */
 </style>
 <script>
 (function(){
