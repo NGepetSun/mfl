@@ -19,7 +19,7 @@ const fallback = {
   date:'COMING SOON', mode:'PUBG MOBILE', playersPerTeam:5, map:'RANDOM', grandPrize:'Rp 15.000.000',
   prize:[['JUARA 1','Rp 7.000.000'],['JUARA 2','Rp 4.000.000'],['JUARA 3','Rp 2.500.000'],['JUARA 4','Rp 1.500.000']],
   streams:[{name:'MAPENDOS IDP',url:''},{name:'MAPENDOS IME',url:''}],
-  teams:Array.from({length:16},(_,i)=>({id:`t${i}`,name:'',side:i<8?'IDP':'IME',logo:'',players:emptyPlayers()})),
+  teams:Array.from({length:8},(_,i)=>({id:`t${i}`,name:'',side:i%2===0?'IDP':'IME',logo:'',players:emptyPlayers()})),
   winners:{}
 };
 
@@ -60,7 +60,7 @@ module.exports = async (req,res)=>{
       let body=req.body;
       if(typeof body==='string') body=JSON.parse(body);
       if(body?.action==='login') return send(res,200,{ok:true});
-      if(!body || !Array.isArray(body.teams) || body.teams.length!==16) return send(res,400,{error:'Data harus memiliki tepat 16 team'});
+      if(!body || !Array.isArray(body.teams) || body.teams.length<2 || body.teams.length>64) return send(res,400,{error:'Data harus memiliki antara 2 sampai 64 team'});
       const cleaned=cleanBody(body);
       await redis('SET',KEY,JSON.stringify(cleaned));
       return send(res,200,{ok:true});
