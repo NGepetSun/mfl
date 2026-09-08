@@ -1,18 +1,28 @@
-# MAPENDOS LIVE — Upstash Redis
+# MAPENDOS SIMPLE — GitHub HP Friendly
 
-Website ini mempertahankan `index.html` bracket full yang sudah dibuat sebelumnya, lalu menambahkan sinkronisasi state melalui Vercel Function + Upstash Redis.
+Hanya 5 file utama + 1 folder API. Tidak memakai Next.js, npm, atau node_modules.
 
-## Environment Variables
-Set:
-- `UPSTASH_REDIS_REST_URL`
-- `UPSTASH_REDIS_REST_TOKEN`
+## Upload GitHub via HP
+Upload semua isi folder ini ke root repository:
+- index.html
+- vercel.json
+- .env.example
+- README.md
+- hero-reference.png
+- idp-crest.png
+- ime-crest.png
+- mapendos-wordmark.png
+- pubg-logo.png
+- api/state.js
 
-Gunakan **Standard Token hanya di server/Vercel Environment Variables**. Jangan menaruh token Standard di HTML/JS browser.
+## Vercel
+Import repository → Settings → Environment Variables:
+UPSTASH_REDIS_REST_URL
+UPSTASH_REDIS_REST_TOKEN
+ADMIN_PASSWORD
+Lalu Redeploy.
 
-## Deploy
-1. Upload folder ini ke GitHub.
-2. Import repository ke Vercel.
-3. Tambahkan dua environment variables di Vercel.
-4. Deploy.
+Jika Upstash belum diisi, website tetap tampil memakai data default tetapi perubahan admin tidak tersimpan permanen.
 
-Admin melakukan perubahan seperti input team, draw, rolling, winner, dan skor. Perubahan disimpan ke Redis. Pengunjung publik melakukan polling state terbaru dan DOM mereka diperbarui otomatis.
+## Admin
+Tekan ADMIN LOGIN, masukkan ADMIN_PASSWORD. Password hanya disimpan di session browser dan dikirim saat menyimpan data.
