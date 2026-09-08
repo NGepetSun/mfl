@@ -14,7 +14,7 @@ async function redis(command, ...args) {
   return data.result;
 }
 
-const emptyPlayers = () => Array.from({length:5},()=>({name:'',logo:''}));
+const emptyPlayers = () => Array.from({length:5},()=>({name:''}));
 const fallback = {
   date:'COMING SOON', mode:'PUBG MOBILE', playersPerTeam:5, map:'RANDOM', grandPrize:'Rp 15.000.000',
   prize:[['JUARA 1','Rp 7.000.000'],['JUARA 2','Rp 4.000.000'],['JUARA 3','Rp 2.500.000'],['JUARA 4','Rp 1.500.000']],
@@ -25,8 +25,8 @@ const fallback = {
 
 function send(res,status,data){res.status(status).json(data)}
 function cleanPlayer(p){
-  if(typeof p==='string') return {name:String(p).slice(0,50),logo:''};
-  return {name:String(p?.name||'').slice(0,50),logo:String(p?.logo||'').slice(0,500)};
+  if(typeof p==='string') return {name:String(p).slice(0,50)};
+  return {name:String(p?.name||'').slice(0,50)};
 }
 function cleanBody(body){
   const teams=body.teams.map((t,i)=>({
